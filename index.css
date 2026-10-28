@@ -1,0 +1,478 @@
+:root {
+    --primary-red: #d71920;
+    --text-dark: #111111;
+    --text-gray: #555555;
+    --bg-white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= BODY BACKGROUND ================= */
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text-dark);
+    overflow-x: hidden;
+
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(255, 255, 255, 0.85) 35%,
+            rgba(255, 255, 255, 0.25) 65%,
+            rgba(255, 255, 255, 0.05) 100%
+        ),
+        url("engineering-machine.png");
+
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+    width: 100%;
+    height: 110px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 5%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 100;
+}
+
+
+/* ================= LOGO ================= */
+
+header > div:first-child {
+    display: flex;
+    flex-direction: column;
+}
+
+header > div:first-child h1 {
+    font-size: 28px;
+    letter-spacing: 8px;
+    font-weight: bold;
+}
+
+header > div:first-child p {
+    font-size: 10px;
+    letter-spacing: 5px;
+    margin-top: 5px;
+}
+
+
+/* ================= NAVIGATION ================= */
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color:#030303;
+    font-size: 14px;
+    font-weight: bold;
+
+    position: relative;
+}
+
+nav a:first-child::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+
+    width: 45px;
+    height: 2px;
+
+    background-color: black;
+}
+
+
+/* ================= HEADER BUTTONS ================= */
+
+header > div:last-child {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+header > div:last-child button:first-child {
+    background-color: var(--primary-red);
+    color: white;
+
+    border: none;
+
+    padding: 16px 30px;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+header > div:last-child button:last-child {
+    background: transparent;
+
+    border: none;
+
+    font-size: 30px;
+
+    cursor: pointer;
+}
+
+
+/* ================= MAIN ================= */
+
+main {
+    min-height: 100vh;
+
+    display: flex;
+
+    position: relative;
+
+    padding: 0 6%;
+}
+
+
+/* ================= LEFT CONTENT ================= */
+
+main > section:first-child {
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    z-index: 10;
+
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/* ================= MAIN HEADING ================= */
+
+main > section:first-child h1 {
+    font-size: 80px;
+
+    line-height: 1.05;
+
+    font-weight: 800;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+}
+
+
+/* ================= SUBTITLE ================= */
+
+main > section:first-child p {
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    color: var(--text-gray);
+
+    margin-bottom: 35px;
+}
+
+
+/* ================= HERO BUTTONS ================= */
+
+main > section:first-child > div {
+    display: flex;
+    gap: 20px;
+}
+
+main > section:first-child > div button {
+    padding: 16px 28px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* GET QUOTE BUTTON */
+
+main > section:first-child > div button:first-child {
+    background-color: var(--primary-red);
+
+    color: white;
+
+    border: 2px solid var(--primary-red);
+}
+
+
+/* VIEW PROJECTS BUTTON */
+
+main > section:first-child > div button:last-child {
+    background: transparent;
+
+    color: black;
+
+    border: 1px solid black;
+}
+
+
+
+/* ================= STATISTICS ================= */
+
+body > section:nth-of-type(1) {
+    position: absolute;
+
+    bottom: 90px;
+    left: 6%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 50px;
+
+    z-index: 20;
+}
+
+body > section:nth-of-type(1) div {
+    min-width: 140px;
+
+    border-right: 1px solid #bbbbbb;
+
+    padding-right: 30px;
+}
+
+body > section:nth-of-type(1) div:last-child {
+    border-right: none;
+}
+
+body > section:nth-of-type(1) h2 {
+    font-size: 25px;
+
+    margin-bottom: 8px;
+}
+
+body > section:nth-of-type(1) p {
+    font-size: 11px;
+
+    font-weight: bold;
+
+    color: var(--text-gray);
+}
+
+
+/* ================= SCROLL DOWN ================= */
+
+body > section:nth-of-type(2) {
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    text-align: center;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    z-index: 20;
+}
+
+body > section:nth-of-type(2) p:last-child {
+    font-size: 25px;
+
+    margin-top: 5px;
+}
+
+
+/* ================= FLOATING BUTTONS ================= */
+
+aside {
+    position: fixed;
+
+    right: 30px;
+
+    bottom: 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    z-index: 200;
+}
+
+aside button {
+    width: 50px;
+    height: 50px;
+
+    background-color: white;
+
+    border: none;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+
+    border-radius: 4px;
+}
+
+aside button:hover {
+    background-color: var(--primary-red);
+
+    color: white;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    display: none;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+    nav {
+        display: none;
+    }
+
+    main > section:first-child h1 {
+        font-size: 60px;
+    }
+
+    body > section:nth-of-type(1) {
+        gap: 20px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 20px;
+    }
+
+    header > div:last-child button:first-child {
+        display: none;
+    }
+
+    main {
+        padding: 0 8%;
+    }
+
+    main > section:first-child {
+        width: 100%;
+    }
+
+    main > section:first-child h1 {
+        font-size: 48px;
+    }
+
+    body > section:nth-of-type(1) {
+        flex-wrap: wrap;
+
+        bottom: 80px;
+
+        gap: 15px;
+    }
+
+    body > section:nth-of-type(1) div {
+        border: none;
+    }
+
+    aside {
+        right: 15px;
+        bottom: 20px;
+    }
+
+}
+/* ================= FLOATING BUTTON HOVER TEXT ================= */
+
+aside button {
+    position: relative;
+}
+
+/* First button text */
+aside button:nth-child(1)::after {
+    content: "Locate us";
+}
+
+/* Second button text */
+aside button:nth-child(2)::after {
+    content: "Call us";
+}
+
+aside button::after {
+    position: absolute;
+
+    right: 60px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    background-color: #111111;
+    color: white;
+
+    padding: 10px 15px;
+
+    font-size: 12px;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 0.3s;
+}
+
+aside button:hover::after {
+    opacity: 1;
+
+    visibility: visible;
+}
